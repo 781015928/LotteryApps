@@ -38,5 +38,8 @@ public abstract class BaseFragment extends Fragment {
     protected final <T> void sendHttp(final ApiRequest<T> request, final CallBack<T> callBack) {
         HttpClient.getInstances().send(request, callBack);
     }
+    protected final <T> void sendHtml(final ApiRequest<T> request, final CallBack<T> callBack) {
+        HttpClient.getInstances().sendHtml(request, callBack);
+    }
 
 }

@@ -29,7 +29,7 @@ import butterknife.OnClick;
  * @date 2017/7/4  22:01
  */
 
-public class WebViewActivity extends BaseActivity {
+public class HomeWebViewActivity extends BaseActivity {
     public static final String NEWS_MODEL = "news_model";
 
     @Bind(R.id.iv_back)

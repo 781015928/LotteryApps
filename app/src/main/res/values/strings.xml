@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">彩票头条</string>
+
+    <string name="tab_home">首页</string>
+    <string name="tab_lottery">开奖公告</string>
+    <string name="tab_setting">设置</string>
 </resources>

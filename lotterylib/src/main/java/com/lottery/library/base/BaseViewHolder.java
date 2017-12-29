@@ -27,7 +27,6 @@ public abstract class BaseViewHolder<M> extends RecyclerView.ViewHolder {
         return 0;
     }
 
-    ;
 
     public final <T extends View> T findViewById(@IdRes int id) {
         if (id < 0) {

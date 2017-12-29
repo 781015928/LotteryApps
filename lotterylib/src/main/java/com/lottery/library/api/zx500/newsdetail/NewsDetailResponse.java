@@ -24,7 +24,7 @@ public class NewsDetailResponse extends ApiResponse<NewsDetailModel> {
     @Override
     public NewsDetailModel getBody() throws IOException {
         String url = getApiRequest().getRequest().url().toString();
-        Document doc = Jsoup.parse(new URL(url).openStream(), "GBK", url);
+        Document doc = Jsoup.parse(new URL(url).openStream(), "GBK", "http://zx.500.com");
         //  String xml = mResponseBody.string();
         // xml = new String(xml.getBytes("GBK"));
         // Document doc = Jsoup.parse(xml);

@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.lottery.app.activity.MainActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.lottery.app.activity.MainActivity">
 
-    <android.support.v7.widget.Toolbar
+    <FrameLayout
+        android:id="@+id/fl_main_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:fitsSystemWindows="true"
-        app:titleTextAppearance="@string/app_name">
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:ellipsize="end"
-            android:maxLength="15"
-            android:singleLine="true"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="#FFFFFF" />
-    </android.support.v7.widget.Toolbar>
-
-    <me.weyye.library.colortrackview.ColorTrackTabLayout
-        android:id="@+id/tab_channel"
+        android:layout_weight="1">
+    </FrameLayout>
+    <RadioGroup
+        android:id="@+id/rg_main_group"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        app:tabIndicatorColor="@color/tab_selected_color"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/tab_selected_color"
-        app:tabTextAppearance="@style/TextAppearanceHome"
-        app:tabTextColor="#ff222222" />
+        android:orientation="horizontal">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <RadioButton
+            android:id="@+id/rb_main_home"
+            style="@style/radio_button_style"
+            android:drawableTop="@drawable/selector_rb_home"
+            android:text="@string/tab_home"/>
+
+        <RadioButton
+            android:id="@+id/rb_main_lottert_hall"
+            style="@style/radio_button_style"
+            android:drawableTop="@drawable/selector_rb_lottert_hall"
+            android:text="@string/tab_lottery"/>
+
+
+        <RadioButton
+            android:id="@+id/rb_main_me"
+            style="@style/radio_button_style"
+            android:drawableTop="@drawable/selector_rb_me"
+            android:text="@string/tab_setting"/>
+    </RadioGroup>
+
+
 </LinearLayout>

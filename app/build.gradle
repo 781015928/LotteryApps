@@ -27,4 +27,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':lotterylib')
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //implementation files('libs/cn.cailiu.zzjbeijingkuaisan_classes_dex2jar.jar')
 }

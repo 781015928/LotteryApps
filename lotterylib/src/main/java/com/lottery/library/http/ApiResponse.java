@@ -35,9 +35,9 @@ public abstract class ApiResponse<T> {
     public abstract T getBody() throws IOException;
 
     public Request getRequest() {
-        if(mResponse==null) {
+        if(apiRequest==null) {
             return null;
         }
-        return mResponse.request();
+        return apiRequest.getRequest();
     }
 }

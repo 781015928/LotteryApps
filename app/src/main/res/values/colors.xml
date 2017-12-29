@@ -48,4 +48,8 @@
     <color name="tab_selected_color">#fff85959</color>
     <color name="tip_view_bg">#D5E8F6</color>
     <color name="tip_view_text_color">#4592C6</color>
+    <color name="red">#ee0000</color>
+    <color name="blue">#0000bb</color>
+    <color name="ball">#ffaa33</color>
+    <color name="blue_text_color">#4592C6</color>
 </resources>

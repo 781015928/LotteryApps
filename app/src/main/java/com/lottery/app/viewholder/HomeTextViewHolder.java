@@ -30,6 +30,8 @@ public class HomeTextViewHolder extends BaseViewHolder<NewsModel> {
     TextView mTvCommentNum;
     @Bind(R.id.tv_time)
     TextView mTvTime;
+    @Bind(R.id.tv_content)
+    TextView tvContent;
 
     public HomeTextViewHolder(ViewGroup viewGroup, int layoutId) {
         super(viewGroup, layoutId);
@@ -43,6 +45,7 @@ public class HomeTextViewHolder extends BaseViewHolder<NewsModel> {
         mTvAuthor.setText(data.getNickname());
         mTvTitle.setText(data.getTitle());
         mTvTag.setText(data.getLs());
+        tvContent.setText(data.getShortcontent());
         mTvTag.setVisibility(TextUtils.isEmpty(data.getLs()) ? View.GONE : View.VISIBLE);
         if (data.getTargets() != null) {
             mTvCommentNum.setText(data.getTargets().getMaxrednum());
