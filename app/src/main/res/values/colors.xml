@@ -52,4 +52,7 @@
     <color name="blue">#0000bb</color>
     <color name="ball">#ffaa33</color>
     <color name="blue_text_color">#4592C6</color>
+
+    <color name="mine_function_span">#F3F5F4</color>
+    <color name="mine_function_divider">#E6E8E7</color>
 </resources>

@@ -4,4 +4,9 @@
     <string name="tab_home">首页</string>
     <string name="tab_lottery">开奖公告</string>
     <string name="tab_setting">设置</string>
+
+    <string name="message_inform">消息通知</string>
+    <string name="provide_news">我要爆料</string>
+    <string name="feed_back">检查更新</string>
+    <string name="settings">系统设置</string>
 </resources>

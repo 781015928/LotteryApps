@@ -1,25 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+
+    <com.lottery.library.widget.HeaderZoomLayout
         android:fitsSystemWindows="true"
-       >
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    >
+
+
+        <RelativeLayout
+            android:background="@color/mine_function_span"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:ellipsize="end"
-            android:maxLength="15"
-            android:singleLine="true"
-            android:text="@string/tab_setting"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="#FFFFFF"/>
-    </android.support.v7.widget.Toolbar>
+        >
+
+            <!--头部背景-->
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="#88000000"
+            />
+
+            <!--头部用户信息-->
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+            >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="ChayChan"
+                    android:textColor="@color/white"
+                    android:textSize="16.0sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/right_arrow"
+                />
+
+
+            </LinearLayout>
+
+
+            <!--内容-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_bg"
+                android:orientation="vertical"
+            >
+
+
+
+                <View
+                    style="@style/MineFunctionDivider"
+                />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/mine_function_span"
+                />
+
+                <View
+                    style="@style/MineFunctionDivider"
+                />
+
+                <!--消息通知-->
+                <RelativeLayout
+                    style="@style/MineFunctionRl"
+                >
+
+                    <TextView
+                        style="@style/MineFunctionTvLeft"
+                        android:text="@string/message_inform"
+                        android:textColor="@color/common_text_color"
+                    />
+
+                    <ImageView
+                        style="@style/MineFunctionArrow"
+                        android:background="@mipmap/setting_arrow"
+                    />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/MineFunctionDivider"
+                />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+
+                />
+
+
+                <View
+                    style="@style/MineFunctionDivider"
+                />
+
+
+
+                <!--用户反馈-->
+                <RelativeLayout
+                    style="@style/MineFunctionRl"
+                >
+
+                    <TextView
+                        style="@style/MineFunctionTvLeft"
+                        android:text="@string/feed_back"
+                        android:textColor="@color/common_text_color"
+                    />
+
+                    <ImageView
+                        style="@style/MineFunctionArrow"
+                        android:background="@mipmap/setting_arrow"
+                    />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/MineFunctionDivider"
+                    android:layout_marginLeft="15dp"
+                />
+
+                <!--系统设置-->
+                <RelativeLayout
+                    style="@style/MineFunctionRl"
+                >
+
+                    <TextView
+                        style="@style/MineFunctionTvLeft"
+                        android:text="@string/settings"
+                        android:textColor="@color/common_text_color"
+                    />
+
+                    <ImageView
+                        style="@style/MineFunctionArrow"
+                        android:background="@mipmap/setting_arrow"
+                    />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/MineFunctionDivider"
+                />
+
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </com.lottery.library.widget.HeaderZoomLayout>
+
 </LinearLayout>
