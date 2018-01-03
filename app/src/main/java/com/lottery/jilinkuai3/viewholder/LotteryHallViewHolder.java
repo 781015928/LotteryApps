@@ -1,11 +1,11 @@
-package com.lottery.app.viewholder;
+package com.lottery.jilinkuai3.viewholder;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.lottery.app.R;
+import com.lottery.jilinkuai3.R;
 import com.lottery.library.api.caipiao163.lotterhall.LotterHallModel;
 import com.lottery.library.base.BaseViewHolder;
 

@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
->
+    android:orientation="vertical">
 
 
     <com.lottery.library.widget.HeaderZoomLayout
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-    >
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
 
 
         <RelativeLayout
-            android:background="@color/mine_function_span"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        >
+            android:background="@color/mine_function_span">
 
             <!--头部背景-->
             <ImageView
                 android:id="@+id/iv_bg"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:background="#88000000"
-            />
+                android:background="#88000000" />
 
             <!--头部用户信息-->
             <LinearLayout
@@ -37,13 +32,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-            >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@mipmap/ic_launcher"/>
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
@@ -53,16 +42,15 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="ChayChan"
+                    android:text="@string/app_name"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"/>
+                    android:textSize="16.0sp" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@mipmap/right_arrow"
-                />
+                    android:background="@mipmap/ic_launcher" />
 
 
             </LinearLayout>
@@ -73,110 +61,96 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_bg"
-                android:orientation="vertical"
-            >
+                android:orientation="vertical">
 
 
-
-                <View
-                    style="@style/MineFunctionDivider"
-                />
+                <View style="@style/MineFunctionDivider" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="@color/mine_function_span"
-                />
+                    android:background="@color/mine_function_span" />
 
-                <View
-                    style="@style/MineFunctionDivider"
-                />
+                <View style="@style/MineFunctionDivider" />
 
                 <!--消息通知-->
                 <RelativeLayout
-                    style="@style/MineFunctionRl"
-                >
+                    android:id="@+id/rl_update"
+                    style="@style/MineFunctionRl">
 
                     <TextView
                         style="@style/MineFunctionTvLeft"
                         android:text="@string/message_inform"
-                        android:textColor="@color/common_text_color"
-                    />
+                        android:textColor="@color/common_text_color" />
+
+                    <TextView
+                        android:id="@+id/tv_app_version"
+                        style="@style/MineFunctionArrow"
+                        android:text="@string/message_inform"
+                        android:textColor="@color/common_grey" />
 
                     <ImageView
-                        style="@style/MineFunctionArrow"
-                        android:background="@mipmap/setting_arrow"
-                    />
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="114dp"
+                        android:src="@mipmap/ic_launcher" />
 
                 </RelativeLayout>
 
-                <View
-                    style="@style/MineFunctionDivider"
-                />
+                <View style="@style/MineFunctionDivider" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
 
-                />
+                    />
 
 
-                <View
-                    style="@style/MineFunctionDivider"
-                />
+                <View style="@style/MineFunctionDivider" />
 
 
-
-                <!--用户反馈-->
                 <RelativeLayout
-                    style="@style/MineFunctionRl"
-                >
+                    android:id="@+id/rl_clear_cache"
+                    style="@style/MineFunctionRl">
 
                     <TextView
                         style="@style/MineFunctionTvLeft"
                         android:text="@string/feed_back"
-                        android:textColor="@color/common_text_color"
-                    />
+                        android:textColor="@color/common_text_color" />
 
                     <ImageView
                         style="@style/MineFunctionArrow"
-                        android:background="@mipmap/setting_arrow"
-                    />
+                        android:background="@mipmap/setting_arrow" />
 
                 </RelativeLayout>
 
                 <View
                     style="@style/MineFunctionDivider"
-                    android:layout_marginLeft="15dp"
-                />
+                    android:layout_marginLeft="15dp" />
 
                 <!--系统设置-->
                 <RelativeLayout
-                    style="@style/MineFunctionRl"
-                >
+                    android:id="@+id/rl_clear_about"
+                    style="@style/MineFunctionRl">
 
                     <TextView
                         style="@style/MineFunctionTvLeft"
                         android:text="@string/settings"
-                        android:textColor="@color/common_text_color"
-                    />
+                        android:textColor="@color/common_text_color" />
 
                     <ImageView
                         style="@style/MineFunctionArrow"
-                        android:background="@mipmap/setting_arrow"
-                    />
+                        android:background="@mipmap/setting_arrow" />
 
                 </RelativeLayout>
 
-                <View
-                    style="@style/MineFunctionDivider"
-                />
-
+                <View style="@style/MineFunctionDivider" />
 
 
             </LinearLayout>
-
-
 
 
         </RelativeLayout>

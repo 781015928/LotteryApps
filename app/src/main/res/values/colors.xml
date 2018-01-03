@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#D33D3C</color>
-    <color name="colorPrimaryDark">#D33D3C</color>
-    <color name="colorAccent">#D33D3C</color>
+    <color name="colorPrimary">#dc3b40</color>
+    <color name="colorPrimaryDark">#dc3b40</color>
+    <color name="colorAccent">#dc3b40</color>
 
-    <color name="status_color_red">#D33D3C</color>
+    <color name="status_color_red">#dc3b40</color>
     <color name="status_color_grey">#BDBDBD</color>
 
     <color name="tab_bg">#F3F5F4</color>

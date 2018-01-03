@@ -2,8 +2,27 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+
+    signingConfigs {
+
+        config {
+            keyAlias '吉林快三'
+            keyPassword 'czg123'
+            storeFile file('../keystore.jks')
+            storePassword 'czg123'
+        }
+
+        release {
+            keyAlias '吉林快三'
+            keyPassword 'czg123'
+            storeFile file('../keystore.jks')
+            storePassword 'czg123'
+        }
+
+    }
+
     defaultConfig {
-        applicationId "com.lottery.app"
+        applicationId "com.lottery.jilinkuai3"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
@@ -14,9 +33,16 @@ android {
             }
         }
 
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.lottery.jilinkuai3",
+                JPUSH_APPKEY : "928dd0d19144e85bacb24449", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default" //暂时填写默认值即可.
+        ]
+
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -27,5 +53,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':lotterylib')
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+
+
+    compile 'cn.jiguang.sdk:jpush:3.0.9'  // 此处以JPush 3.0.9 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.7'  // 此处以JCore 1.1.7 版本为例。
     //implementation files('libs/cn.cailiu.zzjbeijingkuaisan_classes_dex2jar.jar')
 }

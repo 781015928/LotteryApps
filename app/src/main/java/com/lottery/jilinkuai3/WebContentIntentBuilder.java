@@ -1,4 +1,4 @@
-package com.lottery.app;
+package com.lottery.jilinkuai3;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.util.Preconditions;
 import android.support.v7.app.AppCompatActivity;
 
-import com.lottery.app.activity.WebContentActivity;
+import com.lottery.jilinkuai3.activity.WebContentActivity;
 
 import java.util.List;
 

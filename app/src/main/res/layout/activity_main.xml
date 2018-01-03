@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.lottery.app.activity.MainActivity">
+              tools:context="com.lottery.jilinkuai3.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/fl_main_content"

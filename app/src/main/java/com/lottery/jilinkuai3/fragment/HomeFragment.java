@@ -1,10 +1,10 @@
-package com.lottery.app.fragment;
+package com.lottery.jilinkuai3.fragment;
 
 import android.support.v4.view.ViewPager;
 
-import com.lottery.app.Api;
-import com.lottery.app.R;
-import com.lottery.app.adapter.MainTabAdapter;
+import com.lottery.jilinkuai3.Constants;
+import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.adapter.MainTabAdapter;
 import com.lottery.library.base.BaseFragment;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected void initView() {
         mFragments = new ArrayList<>();
-        for (Api.HomeApi homeApi : Api.getHomeApis()) {
+        for (Constants.HomeApi homeApi : Constants.getHomeApis()) {
             HomeTabFragment homeTabFragment = new HomeTabFragment();
             homeTabFragment.setType(homeApi.type);
             mFragments.add(homeTabFragment);

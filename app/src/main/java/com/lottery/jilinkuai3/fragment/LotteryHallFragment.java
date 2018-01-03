@@ -1,14 +1,14 @@
-package com.lottery.app.fragment;
+package com.lottery.jilinkuai3.fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.lottery.app.R;
-import com.lottery.app.Utils;
-import com.lottery.app.WebContentIntentBuilder;
-import com.lottery.app.activity.OpenAwardDetailActivity;
-import com.lottery.app.viewholder.LotteryHallViewHolder;
+import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.Utils;
+import com.lottery.jilinkuai3.WebContentIntentBuilder;
+import com.lottery.jilinkuai3.activity.OpenAwardDetailActivity;
+import com.lottery.jilinkuai3.viewholder.LotteryHallViewHolder;
 import com.lottery.library.api.caipiao163.lotterhall.LotterHallModel;
 import com.lottery.library.api.caipiao163.lotterhall.LotterHallRequest;
 import com.lottery.library.base.BaseAdapter;

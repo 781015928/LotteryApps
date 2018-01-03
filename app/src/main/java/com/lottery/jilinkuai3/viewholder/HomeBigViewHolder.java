@@ -1,13 +1,12 @@
-package com.lottery.app.viewholder;
+package com.lottery.jilinkuai3.viewholder;
 
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.lottery.app.R;
+import com.lottery.jilinkuai3.R;
 import com.lottery.library.api.zx500.news.NewsModel;
 import com.lottery.library.base.BaseViewHolder;
 import com.lottery.library.utils.ImageLoader;
@@ -20,10 +19,15 @@ import butterknife.Bind;
  * Created by czg on 2017/12/28.
  */
 
-public class HomeViewHolder extends BaseViewHolder<NewsModel> {
+public class HomeBigViewHolder extends BaseViewHolder<NewsModel> {
+
 
     @Bind(R.id.tv_title)
     TextView mTvTitle;
+    @Bind(R.id.iv_img)
+    ImageView mIvImg;
+    @Bind(R.id.iv_play)
+    ImageView mIvPlay;
     @Bind(R.id.tv_tag)
     BorderTextView mTvTag;
     @Bind(R.id.tv_author)
@@ -32,13 +36,8 @@ public class HomeViewHolder extends BaseViewHolder<NewsModel> {
     TextView mTvCommentNum;
     @Bind(R.id.tv_time)
     TextView mTvTime;
-    @Bind(R.id.iv_img)
-    ImageView mIvImg;
 
-    @Bind(R.id.ll_duration)
-    LinearLayout mLlDuration;
-
-    public HomeViewHolder(ViewGroup viewGroup, int layoutId) {
+    public HomeBigViewHolder(ViewGroup viewGroup, int layoutId) {
         super(viewGroup, layoutId);
 
 
@@ -47,7 +46,6 @@ public class HomeViewHolder extends BaseViewHolder<NewsModel> {
 
     @Override
     public void setData(NewsModel data) {
-        mLlDuration.setVisibility(View.GONE);
         ImageLoader.setImage(mIvImg, data.getCover());
         mTvTime.setText(TimeUtils.timeFormat(data.getExpiretime(), "MM-dd HH:mm"));
         mTvAuthor.setText(data.getNickname());

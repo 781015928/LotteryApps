@@ -1,9 +1,7 @@
-package com.lottery.app.activity;
+package com.lottery.jilinkuai3.activity;
 
-import android.support.annotation.NonNull;
 import android.webkit.WebView;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
@@ -35,8 +33,7 @@ public class OpenAwardDetailActivity extends WebContentActivity {
     }
 
     @Override
-    protected Element parseWebContent(@NonNull String paramString) {
-        Document localDocument = Jsoup.parse(paramString);
+    protected Element parseWebContent(  Document localDocument) {
         try {
             localDocument.selectFirst("#header").remove();
             localDocument.selectFirst("div.awardBottom").remove();

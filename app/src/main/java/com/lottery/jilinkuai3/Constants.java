@@ -1,4 +1,4 @@
-package com.lottery.app;
+package com.lottery.jilinkuai3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * Created by czg on 2017/12/28.
  */
 
-public class Api {
+public class Constants {
     private final static List<HomeApi> homeApis = new ArrayList();
 
     public final static List<HomeApi> getHomeApis() {

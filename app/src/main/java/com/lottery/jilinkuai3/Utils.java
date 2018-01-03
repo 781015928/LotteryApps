@@ -1,4 +1,4 @@
-package com.lottery.app;
+package com.lottery.jilinkuai3;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,8 +13,7 @@ public class Utils {
             String str1 = paramContext.getPackageName();
             String str2 = paramContext.getPackageManager().getPackageInfo(str1, 0).versionName;
             int i = paramContext.getPackageManager().getPackageInfo(str1, 0).versionCode;
-            String str3 = str1 + "   " + str2 + "  " + i;
-            return str3;
+            return str2;
         } catch (Exception localException) {
         }
         return null;

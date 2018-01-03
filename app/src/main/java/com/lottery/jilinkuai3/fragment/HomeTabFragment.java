@@ -1,4 +1,4 @@
-package com.lottery.app.fragment;
+package com.lottery.jilinkuai3.fragment;
 
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.lottery.app.R;
-import com.lottery.app.activity.HomeWebViewActivity;
-import com.lottery.app.viewholder.HomeBigViewHolder;
-import com.lottery.app.viewholder.HomeTextViewHolder;
-import com.lottery.app.viewholder.HomeViewHolder;
+import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.activity.HomeWebViewActivity;
+import com.lottery.jilinkuai3.viewholder.HomeBigViewHolder;
+import com.lottery.jilinkuai3.viewholder.HomeTextViewHolder;
+import com.lottery.jilinkuai3.viewholder.HomeViewHolder;
 import com.lottery.library.api.zx500.news.NewsModel;
 import com.lottery.library.api.zx500.news.NewsRequest;
 import com.lottery.library.base.BaseAdapter;

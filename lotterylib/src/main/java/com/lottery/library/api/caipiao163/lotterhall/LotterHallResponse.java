@@ -1,7 +1,6 @@
 package com.lottery.library.api.caipiao163.lotterhall;
 
 import com.lottery.library.http.ApiResponse;
-import com.lottery.library.utils.LogUtils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -70,7 +69,6 @@ public class LotterHallResponse extends ApiResponse<List<LotterHallModel>> {
 
 
             lotterHallModel.setContent(element.html());
-            LogUtils.xml(element.html());
 
             data.add(lotterHallModel);
 

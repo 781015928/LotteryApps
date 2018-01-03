@@ -1,10 +1,10 @@
-package com.lottery.app.adapter;
+package com.lottery.jilinkuai3.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.lottery.app.Api;
+import com.lottery.jilinkuai3.Constants;
 import com.lottery.library.base.BaseFragment;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class MainTabAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return Api.getHomeApis().get(position).title;
+        return Constants.getHomeApis().get(position).title;
     }
 
     @Override

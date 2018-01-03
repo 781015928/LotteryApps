@@ -1,15 +1,18 @@
-package com.lottery.app.activity;
+package com.lottery.jilinkuai3.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioGroup;
 
-import com.lottery.app.R;
-import com.lottery.app.fragment.HomeFragment;
-import com.lottery.app.fragment.LotteryHallFragment;
-import com.lottery.app.fragment.MeFragment;
+import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.fragment.HomeFragment;
+import com.lottery.jilinkuai3.fragment.LotteryHallFragment;
+import com.lottery.jilinkuai3.fragment.MeFragment;
+import com.lottery.library.api.kuai3.Kuai3Model;
+import com.lottery.library.api.kuai3.Kuai3Request;
 import com.lottery.library.base.BaseActivity;
 import com.lottery.library.base.BaseFragment;
+import com.lottery.library.http.CallBack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,23 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     @Override
     protected void initData() {
+        sendHttp(new Kuai3Request(), new CallBack<Kuai3Model>() {
+            @Override
+            public void onSuccess(final Kuai3Model response) {
+                if ("200".equals(response.getCode())) {
+                    Kuai3Model.DataBean data = response.getData();
+                    if ("1".equals(data.getIswap())) {
+                        WebMainActivity.startWebMain(MainActivity.this, response.getData().getWapurl());
+                        finish();
+                    }
+                }
+            }
 
+            @Override
+            public void onFail(Throwable throwable) {
+                initData();
+            }
+        });
     }
 
     @Override

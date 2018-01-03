@@ -1,4 +1,4 @@
-package com.lottery.app.activity;
+package com.lottery.jilinkuai3.activity;
 
 
 import android.annotation.TargetApi;
@@ -13,7 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.lottery.app.R;
+import com.lottery.jilinkuai3.R;
 import com.lottery.library.api.web.WebModel;
 import com.lottery.library.api.web.WebRequest;
 import com.lottery.library.base.BaseActivity;
@@ -85,7 +85,6 @@ public class WebContentActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        web.getSettings().setDefaultTextEncodingName("UTF-8");
         web.getSettings().setJavaScriptEnabled(true);
         web.setWebViewClient(new WebContentActivity.MyWebViewClient());
         //  web.setDownloadListener(new MyWebViewDownloadListener(this));
@@ -107,19 +106,22 @@ public class WebContentActivity extends BaseActivity {
     }
 
 
-    public void onSuccess(@NonNull String var2) {
+    public void onSuccess(@NonNull String html) {
         if (!TextUtils.isEmpty(this.mTitleSelector)) {
-            Element var4 = Jsoup.parse(var2).selectFirst(this.mTitleSelector);
+            Element var4 = Jsoup.parse(html).selectFirst(this.mTitleSelector);
             if (var4 != null && !TextUtils.isEmpty(var4.text())) {
                 title.setText(var4.text());
             }
         }
+        Document document = getDocument(html);
+        Element var3 = parseWebContent(document);
 
-        Element var3 = parseWebContent(var2);
-
-
-        web.loadDataWithBaseURL(this.mUrl, var3.toString(), "text/html", "utf-8", null);
+        web.getSettings().setDefaultTextEncodingName(encoding);
+        web.loadDataWithBaseURL(this.mUrl, var3.toString(), "text/html", encoding, null);
     }
+
+
+    private String encoding = "utf-8";
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -127,22 +129,36 @@ public class WebContentActivity extends BaseActivity {
         return true;
     }
 
+    private Document getDocument(String html) {
+        Document doc = Jsoup.parse(html);
+        Elements meta = doc.select("meta");
+        if (meta.size() > 0) {
+            String content = meta.get(0).attr("content");
+            if (!TextUtils.isEmpty(content)) {
+                if (content.contains("charset=")) {
+                     encoding = content.substring(content.indexOf("charset=") + "charset=".length(), content.length());
+                }
 
-    protected Element parseWebContent(@NonNull String var2) {
-        Document var3;
+            }
+
+
+        }
+        return doc;
+    }
+
+
+    protected Element parseWebContent(Document document) {
         if (this.mToRemoved.isEmpty()) {
-            var3 = Jsoup.parse(var2);
         } else {
-            var3 = Jsoup.parse(var2);
             for (int var4 = 0; var4 < this.mToRemoved.size(); ++var4) {
-                Elements var5 = var3.select(this.mToRemoved.get(var4));
+                Elements var5 = document.select(this.mToRemoved.get(var4));
                 if (var5 != null) {
                     var5.remove();
                 }
             }
         }
 
-        return var3;
+        return document;
     }
 
     class MyWebViewClient extends WebViewClient {
@@ -182,12 +198,12 @@ public class WebContentActivity extends BaseActivity {
                         }
                     } while (!var3.startsWith((String) var5.next()));
 
-                    return new WebResourceResponse("text/html", "utf-8", new ByteArrayInputStream("".getBytes()));
+                    return new WebResourceResponse("text/html", encoding, new ByteArrayInputStream("".getBytes()));
                 } else {
                     return super.shouldInterceptRequest(var1, var3);
                 }
             } else {
-                return new WebResourceResponse("text/html", "utf-8", new ByteArrayInputStream("".getBytes()));
+                return new WebResourceResponse("text/html", encoding, new ByteArrayInputStream("".getBytes()));
             }
         }
 
