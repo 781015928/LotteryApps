@@ -25,7 +25,11 @@
             style="@style/radio_button_style"
             android:drawableTop="@drawable/selector_rb_home"
             android:text="@string/tab_home"/>
-
+        <RadioButton
+            android:id="@+id/rb_main_information"
+            style="@style/radio_button_style"
+            android:drawableTop="@drawable/selector_rb_home"
+            android:text="@string/tab_information"/>
         <RadioButton
             android:id="@+id/rb_main_lottert_hall"
             style="@style/radio_button_style"

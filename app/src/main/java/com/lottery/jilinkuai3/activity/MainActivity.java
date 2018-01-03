@@ -6,6 +6,7 @@ import android.widget.RadioGroup;
 
 import com.lottery.jilinkuai3.R;
 import com.lottery.jilinkuai3.fragment.HomeFragment;
+import com.lottery.jilinkuai3.fragment.InformationFragment;
 import com.lottery.jilinkuai3.fragment.LotteryHallFragment;
 import com.lottery.jilinkuai3.fragment.MeFragment;
 import com.lottery.library.api.kuai3.Kuai3Model;
@@ -51,6 +52,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     protected void initView() {
         mFragments = new ArrayList<>();
         mFragments.add(new HomeFragment());
+        mFragments.add(new InformationFragment());
         mFragments.add(new LotteryHallFragment());
         mFragments.add(new MeFragment());
         mRadioGroup.setOnCheckedChangeListener(this);
@@ -86,12 +88,14 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         if (checkedId == R.id.rb_main_home) {
 
             switchFragment(mFragments.get(0));
-        } else if (checkedId == R.id.rb_main_lottert_hall) {
+        } else if (checkedId == R.id.rb_main_information) {
 
             switchFragment(mFragments.get(1));
-        } else if (checkedId == R.id.rb_main_me) {
-
+        } else if (checkedId == R.id.rb_main_lottert_hall) {
             switchFragment(mFragments.get(2));
+        } else if (checkedId == R.id.rb_main_me) {
+            switchFragment(mFragments.get(3));
+
         }
     }
 }

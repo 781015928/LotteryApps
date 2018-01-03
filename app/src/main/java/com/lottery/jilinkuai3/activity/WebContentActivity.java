@@ -62,6 +62,9 @@ public class WebContentActivity extends BaseActivity {
     }
 
     public void sendHttp(String url) {
+        if(url==null) {
+            return;
+        }
         sendHttp(new WebRequest(url), new CallBack<WebModel>() {
             @Override
             public void onSuccess(WebModel response) {

@@ -28,7 +28,10 @@ public class OpenAwardDetailActivity extends WebContentActivity {
             sendHttp(str);
             return true;
         }
-        sendHttp(mUrl);
+        if(paramString!=null) {
+            sendHttp(paramString);
+        }
+
         return true;
     }
 

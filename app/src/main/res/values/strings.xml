@@ -2,9 +2,9 @@
     <string name="app_name">吉林快三</string>
 
     <string name="tab_home">首页</string>
+    <string name="tab_information">资讯</string>
     <string name="tab_lottery">开奖公告</string>
     <string name="tab_setting">设置</string>
-
     <string name="message_inform">检查更新</string>
     <string name="provide_news">检查更新</string>
     <string name="feed_back">清除缓存</string>
