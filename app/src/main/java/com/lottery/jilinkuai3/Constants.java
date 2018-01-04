@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Constants {
     private final static List<HomeApi> homeApis = new ArrayList();
+    public static final String ZHONG_CAI_WANG_FEN_XI = "http://m.zhcw.com/fenxi";
 
     public final static List<HomeApi> getHomeApis() {
         return homeApis;

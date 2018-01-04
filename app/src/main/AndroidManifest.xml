@@ -60,6 +60,7 @@
             android:name=".activity.WebMainActivity"
             android:launchMode="singleTask" />
         <activity android:name=".activity.AboutActivity"></activity>
+        <activity android:name=".activity.ZhcwActivity"></activity>
     </application>
 
 </manifest>

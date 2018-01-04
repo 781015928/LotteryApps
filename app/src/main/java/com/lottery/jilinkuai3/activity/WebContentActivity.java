@@ -7,6 +7,7 @@ import android.os.Build.VERSION;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
@@ -39,15 +40,18 @@ public class WebContentActivity extends BaseActivity {
     public static final String EXTRA_TITLE = "extra_title";
     public static final String EXTRA_TITLE_SELECTOR = "extra_title_selector";
     public static final String EXTRA_URL = "extra_url";
+    public static final String EXTRA_IGNORETEXT = "extra_ignoreText";
     protected String mTitleSelector;
-    private List<String> mToRemoved = new ArrayList();
+    protected List<String> mToRemoved = new ArrayList();
     protected String mUrl;
+    private List<String> ignoreText;
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.web)
     WebView web;
     @Bind(R.id.title)
     TextView title;
+    private String stringExtra;
 
     public WebContentActivity() {
     }
@@ -62,7 +66,7 @@ public class WebContentActivity extends BaseActivity {
     }
 
     public void sendHttp(String url) {
-        if(url==null) {
+        if (url == null) {
             return;
         }
         sendHttp(new WebRequest(url), new CallBack<WebModel>() {
@@ -90,13 +94,29 @@ public class WebContentActivity extends BaseActivity {
 
         web.getSettings().setJavaScriptEnabled(true);
         web.setWebViewClient(new WebContentActivity.MyWebViewClient());
+        web.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+                if(WebContentActivity.this.title.getText().toString().isEmpty()) {
+                    if(title!=null&&!title.contains("about")) {
+                        if(stringExtra==null) {
+                            WebContentActivity.this.title.setText(title);
+                        }
+
+                    }
+
+                }
+            }
+        });
         //  web.setDownloadListener(new MyWebViewDownloadListener(this));
-        String title = getIntent().getStringExtra(EXTRA_TITLE);
-        this.title.setText(title);
+        stringExtra = getIntent().getStringExtra(EXTRA_TITLE);
+        this.title.setText(stringExtra);
 
         this.mUrl = getIntent().getStringExtra(EXTRA_URL);
         this.mTitleSelector = getIntent().getStringExtra(EXTRA_TITLE_SELECTOR);
         String[] var4 = getIntent().getStringArrayExtra(EXTRA_REMOVED_ELEMENTS);
+        ignoreText = (List<String>) getIntent().getSerializableExtra(EXTRA_IGNORETEXT);
         if (var4 != null && var4.length > 0) {
             this.mToRemoved.addAll(Arrays.asList(var4));
         }
@@ -113,14 +133,24 @@ public class WebContentActivity extends BaseActivity {
         if (!TextUtils.isEmpty(this.mTitleSelector)) {
             Element var4 = Jsoup.parse(html).selectFirst(this.mTitleSelector);
             if (var4 != null && !TextUtils.isEmpty(var4.text())) {
-                title.setText(var4.text());
+                if(stringExtra==null) {
+                    title.setText(var4.text());
+                }
+
             }
         }
         Document document = getDocument(html);
         Element var3 = parseWebContent(document);
 
         web.getSettings().setDefaultTextEncodingName(encoding);
-        web.loadDataWithBaseURL(this.mUrl, var3.toString(), "text/html", encoding, null);
+        String content = var3.toString();
+        if(ignoreText!=null&&!ignoreText.isEmpty()) {
+            for (String ignore:ignoreText){
+                content = content.replaceAll(ignore, "");
+            }
+        }
+
+        web.loadDataWithBaseURL(this.mUrl, content, "text/html", encoding, null);
     }
 
 
@@ -139,7 +169,7 @@ public class WebContentActivity extends BaseActivity {
             String content = meta.get(0).attr("content");
             if (!TextUtils.isEmpty(content)) {
                 if (content.contains("charset=")) {
-                     encoding = content.substring(content.indexOf("charset=") + "charset=".length(), content.length());
+                    encoding = content.substring(content.indexOf("charset=") + "charset=".length(), content.length());
                 }
 
             }
@@ -157,7 +187,15 @@ public class WebContentActivity extends BaseActivity {
                 Elements var5 = document.select(this.mToRemoved.get(var4));
                 if (var5 != null) {
                     var5.remove();
+                } else {
+                    Elements elements = document.getElementsByClass(this.mToRemoved.get(var4));
+                    if (elements != null) {
+                        elements.remove();
+                    }
+
                 }
+
+
             }
         }
 

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.lottery.jilinkuai3.activity.WebContentActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebContentIntentBuilder {
@@ -18,6 +19,7 @@ public class WebContentIntentBuilder {
     private String mTitle;
     private String mTitleSelector;
     private String[] mToRemovedTags;
+    private ArrayList<String> ignoreText=new ArrayList<>();
     private String mUrl;
 
     @SuppressLint("RestrictedApi")
@@ -38,6 +40,9 @@ public class WebContentIntentBuilder {
         }
         if (this.mTitleSelector != null) {
             localIntent.putExtra("extra_title_selector", this.mTitleSelector);
+        }
+        if (this.ignoreText != null) {
+            localIntent.putExtra(WebContentActivity.EXTRA_IGNORETEXT, this.ignoreText);
         }
         return localIntent;
 
@@ -75,13 +80,28 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public WebContentIntentBuilder toRemovedTags(@Nullable List<String> paramList) {
-        if (paramList == null) ;
-        for (String[] arrayOfString = null; ; arrayOfString = (String[]) paramList.toArray(new String[0])) {
-            this.mToRemovedTags = arrayOfString;
-            return this;
-        }
-    }
+        if (paramList != null) {
+            mToRemovedTags=new String[paramList.size()];
+            for(int i=0;i<paramList.size();i++){
+                mToRemovedTags[i]=paramList.get(i);
+            }
 
+        }
+        ;
+        return this;
+    }
+    public WebContentIntentBuilder toIgnoreText(@Nullable List<String> toIgnoreText) {
+        if(toIgnoreText!=null) {
+            ignoreText.addAll(toIgnoreText);
+        }
+        return this;
+    }
+    public WebContentIntentBuilder toIgnoreText(@Nullable String toIgnoreText) {
+        if(toIgnoreText!=null) {
+            ignoreText.add(toIgnoreText);
+        }
+        return this;
+    }
     public WebContentIntentBuilder toRemovedTags(@Nullable String[] paramArrayOfString) {
         this.mToRemovedTags = paramArrayOfString;
         return this;
