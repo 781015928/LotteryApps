@@ -27,7 +27,7 @@ android {
         applicationId "com.lottery.jilinkuai3"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 2
+        versionCode 3
         versionName "1.0"
         javaCompileOptions {
             annotationProcessorOptions {

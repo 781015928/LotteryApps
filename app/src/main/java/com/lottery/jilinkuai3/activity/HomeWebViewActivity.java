@@ -65,9 +65,7 @@ public class HomeWebViewActivity extends BaseActivity {
             @Override
             public void onSuccess(NewsDetailModel response) {
                 String html = response.getContent();
-
-                html = " <img src=\"" + newsModel.getCover() + "\"   style=\"display:;max-width:100%;\"/>" + html;
-                mWvContent.loadData(html, "text/html", "UTF-8");
+                mWvContent.loadDataWithBaseURL(null,html, "text/html",  "utf-8", null);
             }
 
             @Override
