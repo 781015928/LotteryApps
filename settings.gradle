@@ -1,1 +1,1 @@
-include ':app', ':lotterylib'//, ':360xunlei'
+include ':app', ':lotterylib'//, ':myapplication'//, ':360xunlei'

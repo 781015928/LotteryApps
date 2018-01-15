@@ -51,8 +51,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @Override
     protected void initView() {
         mFragments = new ArrayList<>();
-        mFragments.add(new HomeFragment());
         mFragments.add(new InformationFragment());
+        mFragments.add(new HomeFragment());
         mFragments.add(new LotteryHallFragment());
         mFragments.add(new MeFragment());
         mRadioGroup.setOnCheckedChangeListener(this);

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 25
     lintOptions {
         abortOnError false
     }
@@ -27,8 +27,8 @@ android {
         applicationId "com.lottery.jilinkuai3"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.0"
+        versionCode 5
+        versionName "1.0.1"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath true

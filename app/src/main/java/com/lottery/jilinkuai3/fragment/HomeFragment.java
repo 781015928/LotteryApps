@@ -125,7 +125,9 @@ public class HomeFragment extends BaseFragment {
         ArrayList<String> remove = new ArrayList<>();
         String title = null;
         remove.add("#header");
-        remove.add("div.topSwipeWrap");
+        remove.add("div.#topSwipeWrap");
+        remove.add("div.topSwipeWrap fixed_right_bottom topHiPos4");
+        remove.add("div.topSwipeItem");
         remove.add("section.bottomBox");
         remove.add("a.indexIcon");
         remove.add("div.awardBottom");

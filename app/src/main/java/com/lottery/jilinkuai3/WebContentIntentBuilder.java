@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.util.Preconditions;
 import android.support.v7.app.AppCompatActivity;
 
 import com.lottery.jilinkuai3.activity.WebContentActivity;
@@ -24,8 +23,6 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public Intent build() {
-        Preconditions.checkNotNull(this.mUrl);
-        Preconditions.checkNotNull(this.mContext);
         if (mTarget.getSuperclass() != WebContentActivity.class) {
             mTarget = WebContentActivity.class;
 
@@ -50,7 +47,6 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public WebContentIntentBuilder context(@NonNull Context paramContext) {
-        Preconditions.checkNotNull(paramContext);
         this.mContext = paramContext;
         return this;
     }
@@ -61,7 +57,6 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public WebContentIntentBuilder targetActivity(@NonNull Class<? extends AppCompatActivity> paramClass) {
-        Preconditions.checkNotNull(paramClass);
         this.mTarget = paramClass;
         return this;
     }
@@ -73,7 +68,6 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public WebContentIntentBuilder titleSelector(@NonNull String paramString) {
-        Preconditions.checkNotNull(paramString);
         this.mTitleSelector = paramString;
         return this;
     }
@@ -109,7 +103,6 @@ public class WebContentIntentBuilder {
 
     @SuppressLint("RestrictedApi")
     public WebContentIntentBuilder url(@NonNull String paramString) {
-        Preconditions.checkNotNull(paramString);
         this.mUrl = paramString;
         return this;
     }

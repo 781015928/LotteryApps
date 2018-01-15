@@ -26,10 +26,16 @@
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".activity.HomeWebViewActivity" />
-        <activity android:name=".activity.WebPageActivity" />
+        <activity android:name=".activity.HomeWebViewActivity"
+                  android:launchMode="singleTask"
+        />
+        <activity android:name=".activity.WebPageActivity"
+                  android:launchMode="singleTask"
+        />
         <activity android:name=".activity.WebContentActivity" />
-        <activity android:name=".activity.OpenAwardDetailActivity" />
+        <activity android:name=".activity.OpenAwardDetailActivity"
+                  android:launchMode="singleTask"
+        />
 
         <service
             android:name="cn.jpush.android.service.PushService"

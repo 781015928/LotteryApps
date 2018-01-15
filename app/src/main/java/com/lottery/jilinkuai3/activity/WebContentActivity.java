@@ -15,6 +15,8 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.Utils;
+import com.lottery.jilinkuai3.WebContentIntentBuilder;
 import com.lottery.library.api.web.WebModel;
 import com.lottery.library.api.web.WebRequest;
 import com.lottery.library.base.BaseActivity;
@@ -85,7 +87,9 @@ public class WebContentActivity extends BaseActivity {
     @Override
     protected void initData() {
         sendHttp(mUrl);
-        web.loadDataWithBaseURL(null, "加载中。。", "text/html", "utf-8", null);
+
+        web.loadUrl("file:///android_asset/html/loading.html");
+      //  web.loadDataWithBaseURL(null, "加载中。。", "text/html", "utf-8", null);
         // HttpClient.fetchWebPage(100, this.mUrl, this);
     }
 
@@ -254,8 +258,14 @@ public class WebContentActivity extends BaseActivity {
         }
 
         @Override
-        public boolean shouldOverrideUrlLoading(WebView var1, String var2) {
-            return WebContentActivity.this.handleUrlLoading(var1, var2);
+        public boolean shouldOverrideUrlLoading(WebView var1, String url) {
+
+            WebContentIntentBuilder localWebContentIntentBuilder = new WebContentIntentBuilder();
+
+            localWebContentIntentBuilder.context(WebContentActivity.this).targetActivity(WebContentActivity.class).title(stringExtra).url(url).titleSelector("header h1").toRemovedTags(mToRemoved).toIgnoreText(ignoreText);
+            Utils.navigateTo(localWebContentIntentBuilder);
+
+            return true;
         }
 
 

@@ -22,7 +22,7 @@
             android:ellipsize="end"
             android:maxLength="15"
             android:singleLine="true"
-            android:text="首页"
+            android:text="@string/tab_information"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:textColor="#FFFFFF" />
     </android.support.v7.widget.Toolbar>
