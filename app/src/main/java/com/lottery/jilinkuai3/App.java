@@ -1,9 +1,6 @@
 package com.lottery.jilinkuai3;
 
 import android.app.Application;
-import android.os.Handler;
-import android.os.Looper;
-import android.widget.Toast;
 
 import com.king.thread.nevercrash.NeverCrash;
 import com.lottery.library.api.Api;
@@ -29,22 +26,17 @@ public class App extends Application {
         JPushInterface.setDebugMode(true);
         String registrationID = JPushInterface.getRegistrationID(getApplicationContext());
         LogUtils.e(registrationID);
-        Api.init("141386");
+        Api.init("131506");
         NeverCrash.init(new NeverCrash.CrashHandler() {
             @Override
             public void uncaughtException(Thread t, Throwable e) {
-                showToast(e.getMessage());
+            e.printStackTrace();
             }
         });
     }
     private void showToast(final String text){
 
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(getApplicationContext(),text,Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
 }

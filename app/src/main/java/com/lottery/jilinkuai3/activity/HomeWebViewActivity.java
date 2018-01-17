@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.library.api.zx500.news.NewsModel;
 import com.lottery.library.api.zx500.newsdetail.NewsDetailModel;
 import com.lottery.library.api.zx500.newsdetail.NewsDetailRequest;

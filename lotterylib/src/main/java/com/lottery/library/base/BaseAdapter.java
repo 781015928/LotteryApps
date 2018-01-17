@@ -27,6 +27,10 @@ public class BaseAdapter<T> extends RecyclerView.Adapter<BaseViewHolder<T>> {
     private Map<Integer, Integer> viewHoldersLayout = new HashMap<>();
     private static final int DEFAULT_TYPE = 0;
 
+    public BaseAdapter(Context context) {
+        this.context = context;
+    }
+
     public BaseAdapter(Context context, Class<? extends BaseViewHolder<T>> defultViewHolder, int layoutId) {
         this.context = context;
         viewHolders.put(DEFAULT_TYPE, defultViewHolder);

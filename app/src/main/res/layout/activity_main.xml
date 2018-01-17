@@ -29,7 +29,7 @@
             android:id="@+id/rb_main_information"
             style="@style/radio_button_style"
             android:drawableTop="@drawable/selector_rb_information"
-            android:text="@string/tab_information"/>
+            android:text="@string/tab_chat"/>
         <RadioButton
             android:id="@+id/rb_main_lottert_hall"
             style="@style/radio_button_style"

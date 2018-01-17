@@ -1,13 +1,15 @@
 <resources>
-    <string name="app_name">吉林快三</string>
+    <string name="app_name">时时彩开奖</string>
 
     <string name="tab_home">首页资讯</string>
     <string name="tab_information">精选</string>
+    <string name="tab_chat">图表</string>
     <string name="tab_lottery">开奖公告</string>
     <string name="tab_setting">设置</string>
     <string name="message_inform">检查更新</string>
     <string name="provide_news">检查更新</string>
-    <string name="feed_back">清除缓存</string>
+    <string name="feed_back">意见反馈</string>
+    <string name="clear_cache">清除缓存</string>
     <string name="settings">关于</string>
-    <string name="app_about">\t\t %s是一款彩票咨询软件，可以快速的查看彩票信息，包含开奖结果，彩票资讯、双色球、福彩3D、足球、大乐透、竞彩足球、竞猜篮球、数字排列，查看各种玩法技巧。\n\t\t 开奖公告包含双色球、大乐透、3D、七星彩等各种开奖结果，可以有效的查看各种开奖结果。</string>
+    <string name="app_about">\t\t %s是一款功能强大的时时彩选号工具，通过开奖号码图表，发现出号规律，是你中大奖的好助手。更有相关资讯供您阅读，只需要极少流量，没有网络也可以查看历史数据时时彩是一款功能强大的工具。</string>
 </resources>

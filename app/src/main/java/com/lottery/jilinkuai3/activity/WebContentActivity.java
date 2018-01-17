@@ -14,7 +14,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.Utils;
 import com.lottery.jilinkuai3.WebContentIntentBuilder;
 import com.lottery.library.api.web.WebModel;

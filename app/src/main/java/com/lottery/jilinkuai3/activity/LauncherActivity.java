@@ -3,7 +3,7 @@ package com.lottery.jilinkuai3.activity;
 import android.content.Intent;
 import android.os.Handler;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.library.api.kuai3.Kuai3Model;
 import com.lottery.library.api.kuai3.Kuai3Request;
 import com.lottery.library.base.BaseActivity;

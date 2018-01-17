@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.lottery.jilinkuai3.Constants;
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.Utils;
 import com.lottery.jilinkuai3.WebContentIntentBuilder;
 import com.lottery.jilinkuai3.activity.WebContentActivity;
@@ -34,8 +34,9 @@ public class HomeFragment extends BaseFragment {
             "http://m.zhcw.com/zixun/active.jsp?type=zt"};
 
     private String[] bannerUrl = new String[]{
-            "http://m.zhcw.com/khd/zx/cx/banner/14668207.shtml",
-            "http://m.zhcw.com/khd/zx/cx/banner/14670353.shtml"
+            "http://m.zhcw.com/khd/zy/banner/14970150.shtml",
+            "http://m.zhcw.com/khd/zy/banner/14879698.shtml",
+            "http://m.zhcw.com/khd/zx/sp/fcybs/14919037.shtml"
     };
 
 
@@ -83,7 +84,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        homeBanner.setImages(Arrays.asList(R.mipmap.banner1, R.mipmap.banner2));
+        homeBanner.setImages(Arrays.asList(R.mipmap.banner_1, R.mipmap.banner_2,R.mipmap.banner_3));
         homeBanner.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {

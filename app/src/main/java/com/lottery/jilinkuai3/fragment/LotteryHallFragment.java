@@ -4,7 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.Utils;
 import com.lottery.jilinkuai3.WebContentIntentBuilder;
 import com.lottery.jilinkuai3.activity.OpenAwardDetailActivity;

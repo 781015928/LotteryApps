@@ -3,7 +3,7 @@ package com.lottery.jilinkuai3.fragment;
 import android.support.v4.view.ViewPager;
 
 import com.lottery.jilinkuai3.Constants;
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.adapter.MainTabAdapter;
 import com.lottery.library.base.BaseFragment;
 

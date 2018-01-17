@@ -235,7 +235,7 @@ public class NewsModel implements Serializable {
         this.targets = targets;
     }
 
-    public static class Targets implements Serializable{
+    public static class Targets implements Serializable {
         private String maxrednum;
         private String tenprojecthits;
 

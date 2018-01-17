@@ -29,6 +29,13 @@ public abstract class BaseFragment extends Fragment {
         return mRootView;
     }
 
+    protected <T extends View> T findViewById(int res) {
+        if (mRootView == null) {
+            return null;
+        }
+        return (T) mRootView.findViewById(res);
+    }
+
     protected abstract void initData();
 
     protected abstract void initView();
@@ -38,6 +45,7 @@ public abstract class BaseFragment extends Fragment {
     protected final <T> void sendHttp(final ApiRequest<T> request, final CallBack<T> callBack) {
         HttpClient.getInstances().send(request, callBack);
     }
+
     protected final <T> void sendHtml(final ApiRequest<T> request, final CallBack<T> callBack) {
         HttpClient.getInstances().sendHtml(request, callBack);
     }

@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.activity.HomeWebViewActivity;
 import com.lottery.jilinkuai3.viewholder.HomeBigViewHolder;
 import com.lottery.jilinkuai3.viewholder.HomeTextViewHolder;

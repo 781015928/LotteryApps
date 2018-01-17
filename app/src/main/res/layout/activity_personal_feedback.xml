@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+   >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:fitsSystemWindows="true">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ellipsize="end"
+            android:maxLength="15"
+            android:singleLine="true"
+            android:text="意见反馈"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="#FFFFFF"/>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="我遇到的问题"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="1dp"
+        android:text="为了更好的解决你反馈的问题，请认真填写您出现的问题："
+        android:textColor="@color/black"
+        android:textSize="13sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:background="@null"
+                android:button="@null"
+                android:id="@+id/cb_download_fail"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/selector_checkbox"
+                android:gravity="center_vertical"
+                android:text="离线下载失败"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:background="@null"
+                android:button="@null"
+                android:id="@+id/cb_not_into_home"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/selector_checkbox"
+                android:text="首页无法进入"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:background="@null"
+                android:button="@null"
+                android:id="@+id/cb_play_slow"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/selector_checkbox"
+                android:gravity="center_vertical"
+                android:text="播放卡顿"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:background="@null"
+                android:button="@null"
+                android:padding="15dp"
+                android:id="@+id/cb_not_clear_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/selector_checkbox"
+                android:gravity="center_vertical"
+                android:text="无法清除缓存"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+            <CheckBox
+                android:background="@null"
+                android:button="@null"
+                android:id="@+id/cb_play_other"
+                android:padding="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/selector_checkbox"
+                android:gravity="center_vertical"
+                android:text="其他问题"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                />
+        </FrameLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ed_content"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="请详细写下您的建议"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"
+        android:maxLength="300"/>
+
+    <EditText
+        android:maxLength="20"
+        android:id="@+id/ed_phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="start"
+        android:hint="您的联系方式（选填）"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:maxLength="11"
+        android:id="@+id/ed_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:gravity="start"
+        android:hint="邮箱/QQ/手机号（选填）"
+        android:padding="10dp"
+        android:textColorHint="@color/black"
+        android:textSize="14sp"/>
+
+    <Button
+        android:layout_height="40dp"
+        android:id="@+id/btn_commit"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:text="提交"
+        />
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:text="若你的问题没有解决，请致电400-9009-365"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

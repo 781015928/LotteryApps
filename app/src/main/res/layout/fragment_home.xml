@@ -42,8 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:image_scale_type="center_crop"
-                app:indicator_margin    ="5dp"
-                app:ratio="1.77778" />
+                app:indicator_margin="5dp"
+                app:ratio="3.3684" />
 
             <LinearLayout
                 android:layout_marginBottom="20dp"
@@ -82,7 +82,6 @@
                     android:orientation="vertical">
 
                     <ImageView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@mipmap/jincaijiangtang" />

@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.library.api.zx500.news.NewsModel;
 import com.lottery.library.base.BaseViewHolder;
 import com.lottery.library.utils.ImageLoader;

@@ -24,11 +24,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.lottery.jilinkuai3"
+        applicationId "com.lottery.shishicaikaijiang"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 5
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath true
@@ -36,8 +36,8 @@ android {
         }
 
         manifestPlaceholders = [
-                JPUSH_PKGNAME: "com.lottery.jilinkuai3",
-                JPUSH_APPKEY : "928dd0d19144e85bacb24449", //JPush上注册的包名对应的appkey.
+                JPUSH_PKGNAME: "com.lottery.shishicaikaijiang",
+                JPUSH_APPKEY : "e07808539c1ba3967250d376", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default" //暂时填写默认值即可.
         ]
 

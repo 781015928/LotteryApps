@@ -1,19 +1,28 @@
 package com.lottery.jilinkuai3.activity;
 
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewCompat;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RadioGroup;
 
-import com.lottery.jilinkuai3.R;
-import com.lottery.jilinkuai3.fragment.HomeFragment;
-import com.lottery.jilinkuai3.fragment.InformationFragment;
+import com.lottery.jilinkuai3.fragment.ChatFragment;
 import com.lottery.jilinkuai3.fragment.LotteryHallFragment;
 import com.lottery.jilinkuai3.fragment.MeFragment;
+import com.lottery.jilinkuai3.fragment.ZcHomeFragment;
 import com.lottery.library.api.kuai3.Kuai3Model;
 import com.lottery.library.api.kuai3.Kuai3Request;
 import com.lottery.library.base.BaseActivity;
 import com.lottery.library.base.BaseFragment;
 import com.lottery.library.http.CallBack;
+import com.lottery.shishicaikaijiang.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +35,30 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     RadioGroup mRadioGroup;
     private List<BaseFragment> mFragments;
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= 21) {
+            int statusColor = Color.parseColor("#008000");
+//针对版本5.x以上的即LOLLIPOP以上的
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getWindow();
+                //设置透明状态栏,这样才能让 ContentView 向上
+                window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                //需要设置这个 flag 才能调用 setStatusBarColor 来设置状态栏颜色
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                //设置状态栏颜色
+                window.setStatusBarColor(statusColor);
+                ViewGroup mContentView = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+                View mChildView = mContentView.getChildAt(0);
+                if (mChildView != null) {
+                    //注意不是设置 ContentView 的 FitsSystemWindows, 而是设置 ContentView 的第一个子 View .
+                    // 使其不为系统 View 预留空间.不预留空间的话 状态栏就会覆盖布局顶部
+                    ViewCompat.setFitsSystemWindows(mChildView, false);
+                }
+            }
+        }
+    }
 
     @Override
     protected void initData() {
@@ -51,8 +84,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @Override
     protected void initView() {
         mFragments = new ArrayList<>();
-        mFragments.add(new InformationFragment());
-        mFragments.add(new HomeFragment());
+        mFragments.add(new ZcHomeFragment());
+        mFragments.add(new ChatFragment());
         mFragments.add(new LotteryHallFragment());
         mFragments.add(new MeFragment());
         mRadioGroup.setOnCheckedChangeListener(this);

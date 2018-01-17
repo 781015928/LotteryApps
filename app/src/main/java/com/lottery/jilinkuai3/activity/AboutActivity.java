@@ -2,8 +2,8 @@ package com.lottery.jilinkuai3.activity;
 
 import android.widget.TextView;
 
-import com.lottery.jilinkuai3.R;
 import com.lottery.library.base.BaseActivity;
+import com.lottery.shishicaikaijiang.R;
 
 import butterknife.Bind;
 

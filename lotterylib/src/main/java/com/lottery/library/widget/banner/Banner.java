@@ -323,7 +323,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         }
     }
 
-    private void setImageList(List<?> imagesUrl) {
+    private <T>void setImageList(List<T> imagesUrl) {
         if (imagesUrl == null || imagesUrl.size() <= 0) {
             Log.e(tag, "Please set the images data.");
             return;
@@ -338,7 +338,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
                 imageView = new ImageView(context);
             }
             setScaleType(imageView);
-            Object url = null;
+            T url = null;
             if (i == 0) {
                 url = imagesUrl.get(count - 1);
             } else if (i == count + 1) {

@@ -11,7 +11,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.jilinkuai3.activity.WebMainActivity;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.library.utils.LogUtils;
 
 import org.json.JSONException;
@@ -60,7 +61,9 @@ public class JpushReceiver extends BroadcastReceiver {
 
         } else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
             LogUtils.e("[JpushReceiver] 用户点击打开了通知");
-
+            Intent intentMain = new Intent(context, WebMainActivity.class);
+            intentMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intentMain);
 
         } else if (JPushInterface.ACTION_RICHPUSH_CALLBACK.equals(intent.getAction())) {
             LogUtils.e("[JpushReceiver] 用户收到到RICH PUSH CALLBACK: " + bundle.getString(JPushInterface.EXTRA_EXTRA));

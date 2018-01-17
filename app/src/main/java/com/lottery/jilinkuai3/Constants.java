@@ -10,6 +10,8 @@ import java.util.List;
 public class Constants {
     private final static List<HomeApi> homeApis = new ArrayList();
     public static final String ZHONG_CAI_WANG_FEN_XI = "http://m.zhcw.com/fenxi";
+    public static final String CHAT = "http://m.310win.com/chart/ChartIndex.aspx";
+    public static final String ZI_XUN = "http://m.310win.com/chart/ChartIndex.aspx";
 
     public final static List<HomeApi> getHomeApis() {
         return homeApis;

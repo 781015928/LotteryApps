@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lottery.jilinkuai3">
+    package="com.lottery.shishicaikaijiang">
 
     <uses-sdk tools:overrideLibrary="com.chaychan.lib,com.chaychan.library" />
 
@@ -10,13 +10,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".App"
+        android:name="com.lottery.jilinkuai3.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LauncherActivity">
+        <activity android:name="com.lottery.jilinkuai3.activity.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,16 +24,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.lottery.jilinkuai3.activity.MainActivity"
+            android:screenOrientation="portrait"
             android:launchMode="singleTask" />
-        <activity android:name=".activity.HomeWebViewActivity"
+        <activity android:name="com.lottery.jilinkuai3.activity.HomeWebViewActivity"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name="com.lottery.jilinkuai3.activity.WebPageActivity"
+                  android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name="com.lottery.jilinkuai3.activity.WebContentActivity"
+                  android:screenOrientation="portrait"
+        />
+        <activity android:name="com.lottery.jilinkuai3.activity.OpenAwardDetailActivity"
+                  android:screenOrientation="portrait"
                   android:launchMode="singleTask"
         />
-        <activity android:name=".activity.WebPageActivity"
+        <activity android:name="com.lottery.jilinkuai3.activity.FeedBackActivity"
+                  android:screenOrientation="portrait"
                   android:launchMode="singleTask"
         />
-        <activity android:name=".activity.WebContentActivity" />
-        <activity android:name=".activity.OpenAwardDetailActivity"
+        <activity android:name="com.lottery.jilinkuai3.activity.TabActivity"
+                  android:screenOrientation="portrait"
                   android:launchMode="singleTask"
         />
 
@@ -43,7 +57,7 @@
             tools:node="replace" />
 
         <receiver
-            android:name=".jpush.JpushReceiver"
+            android:name="com.lottery.jilinkuai3.jpush.JpushReceiver"
             android:enabled="true">
             <intent-filter>
 
@@ -63,10 +77,10 @@
         </receiver>
 
         <activity
-            android:name=".activity.WebMainActivity"
+            android:name="com.lottery.jilinkuai3.activity.WebMainActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".activity.AboutActivity"></activity>
-        <activity android:name=".activity.ZhcwActivity"></activity>
+        <activity android:name="com.lottery.jilinkuai3.activity.AboutActivity"></activity>
+        <activity android:name="com.lottery.jilinkuai3.activity.ZhcwActivity"></activity>
     </application>
 
 </manifest>

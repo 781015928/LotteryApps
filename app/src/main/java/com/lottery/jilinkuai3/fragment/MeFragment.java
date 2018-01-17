@@ -6,9 +6,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lottery.jilinkuai3.R;
+import com.lottery.shishicaikaijiang.R;
 import com.lottery.jilinkuai3.Utils;
 import com.lottery.jilinkuai3.activity.AboutActivity;
+import com.lottery.jilinkuai3.activity.FeedBackActivity;
 import com.lottery.library.base.BaseFragment;
 import com.lottery.library.utils.ClearCacheUtil;
 
@@ -50,14 +51,14 @@ public class MeFragment extends BaseFragment {
     private boolean iscache;
     Toast toast;
 
-    @OnClick({R.id.rl_update, R.id.rl_clear_cache, R.id.rl_clear_about})
+    @OnClick({R.id.rl_update, R.id.rl_clear_cache, R.id.rl_clear_about, R.id.rl_feed_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rl_update:
                 tvAppVersion.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(toast!=null) {
+                        if (toast != null) {
                             toast.cancel();
                         }
 
@@ -71,7 +72,7 @@ public class MeFragment extends BaseFragment {
                     tvAppVersion.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if(toast!=null) {
+                            if (toast != null) {
                                 toast.cancel();
                             }
                             toast = Toast.makeText(getActivity().getApplicationContext(), "清除了" + ClearCacheUtil.getTotalCacheSize(getActivity()) + "缓存", Toast.LENGTH_SHORT);
@@ -84,7 +85,7 @@ public class MeFragment extends BaseFragment {
                     tvAppVersion.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if(toast!=null) {
+                            if (toast != null) {
                                 toast.cancel();
                             }
                             toast = Toast.makeText(getActivity().getApplicationContext(), "很干净，没有垃圾", Toast.LENGTH_SHORT);
@@ -103,6 +104,9 @@ public class MeFragment extends BaseFragment {
                 startActivity(intent);
 
 
+                break;
+            case R.id.rl_feed_back:
+                startActivity(new Intent(getActivity(), FeedBackActivity.class));
                 break;
         }
     }
